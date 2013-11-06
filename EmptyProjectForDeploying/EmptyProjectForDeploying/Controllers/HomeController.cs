@@ -10,7 +10,7 @@ namespace EmptyProjectForDeploying.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Eh...You're better off not.";
+            ViewBag.Message = "First push to git.";
 
             return View();
         }

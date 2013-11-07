@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EmptyProjectForDeploying.Models;
+using Simple.Data;
 
 namespace EmptyProjectForDeploying.Controllers
 {
@@ -11,9 +12,10 @@ namespace EmptyProjectForDeploying.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "First push to git.";
-            ViewBag.Cheeses = new[]
-                {new Cheese{Name = "name1", Country = "country1"}, new Cheese{Name = "name2", Country = "country2"}};
+            ViewBag.Message = "This site is now about cheese.";
+            string connectionString = @"Server=.\sql2012;Database=EmptyDb;Trusted_Connection=True;";
+            var db = Database.OpenNamedConnection(connectionString);
+            ViewBag.Cheeses = db.Cheeses.All();
             return View();
         }
 

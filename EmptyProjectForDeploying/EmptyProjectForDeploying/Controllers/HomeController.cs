@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EmptyProjectForDeploying.Models;
 
 namespace EmptyProjectForDeploying.Controllers
 {
@@ -12,7 +13,7 @@ namespace EmptyProjectForDeploying.Controllers
         {
             ViewBag.Message = "First push to git.";
             ViewBag.Cheeses = new[]
-                {new {Name = "name1", Country = "country1"}, new {Name = "name2", Country = "country2"}};
+                {new Cheese{Name = "name1", Country = "country1"}, new Cheese{Name = "name2", Country = "country2"}};
             return View();
         }
 

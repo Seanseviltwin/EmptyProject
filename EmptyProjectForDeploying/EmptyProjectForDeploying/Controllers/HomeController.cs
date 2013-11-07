@@ -13,8 +13,7 @@ namespace EmptyProjectForDeploying.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "This site is now about cheese.";
-            string connectionString = @"Server=.\sql2012;Database=EmptyDb;Trusted_Connection=True;";
-            var db = Database.OpenNamedConnection(connectionString);
+            var db = Database.Open();
             ViewBag.Cheeses = db.Cheeses.All();
             return View();
         }

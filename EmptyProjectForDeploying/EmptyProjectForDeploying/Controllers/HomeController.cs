@@ -11,7 +11,8 @@ namespace EmptyProjectForDeploying.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "First push to git.";
-
+            ViewBag.Cheeses = new[]
+                {new {Name = "name1", Country = "country1"}, new {Name = "name2", Country = "country2"}};
             return View();
         }
 
